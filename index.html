@@ -18,11 +18,21 @@
 
   <script>
 
-    let tasks = ["pick  up the children"]
+    let tasks = ["pick up the children", "wash the car", "buy groceries"]
     
     const taskInput = document.getElementById("taskInput");
     const addBtn = document.getElementById("addBtn");
     const taskList = document.getElementById("taskList");
+
+     
+     function renderTasks() {
+      taskList.innerHTML = ""; 
+      tasks.forEach(function(task) {
+        const li = document.createElement("li");
+        li.textContent = task;
+        taskList.appendChild(li);
+      });
+    }
 
     
     addBtn.addEventListener("click", function () {
@@ -43,6 +53,7 @@
         addBtn.click();
       }
     });
+    renderTasks();
   </script>
 </body>
 </html>
